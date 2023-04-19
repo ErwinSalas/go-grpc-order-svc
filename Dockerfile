@@ -11,7 +11,7 @@ LABEL maintainer="Erwin Salas <erwinsalas42@gmail.com>"
 RUN apk update && apk add --no-cache git
 
 # Set the current working directory inside the container 
-WORKDIR /app-auth
+WORKDIR /app-order
 
 # Copy go mod and sum files 
 COPY go.mod go.sum ./
@@ -32,9 +32,8 @@ RUN apk --no-cache add ca-certificates
 WORKDIR /root/
 
 # Copy the Pre-built binary file from the previous stage. Observe we also copied the .env file
-COPY --from=builder /app-auth/main .
-COPY --from=builder /app-auth/.env . 
-COPY --from=builder /app-auth/dev.env . 
+COPY --from=builder /app-order/main .
+COPY --from=builder /app-order/.env . 
 
 # Expose port 50053 to the outside world
 EXPOSE 50053

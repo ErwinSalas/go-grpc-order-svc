@@ -11,6 +11,7 @@ import (
 )
 
 type Server struct {
+	pb.UnimplementedOrderServiceServer
 	H          db.Handler
 	ProductSvc client.ProductServiceClient
 }

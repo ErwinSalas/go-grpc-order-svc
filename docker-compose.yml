@@ -33,6 +33,5 @@ networks:
     external: true
 
 volumes:
-  api:
   database_postgres:
 
