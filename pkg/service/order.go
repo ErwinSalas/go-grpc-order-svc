@@ -2,6 +2,7 @@ package service
 
 import (
 	"context"
+	"fmt"
 	"net/http"
 
 	"github.com/hellokvn/go-grpc-order-svc/pkg/client"
@@ -17,6 +18,8 @@ type Server struct {
 }
 
 func (s *Server) CreateOrder(ctx context.Context, req *pb.CreateOrderRequest) (*pb.CreateOrderResponse, error) {
+	fmt.Println("RPC order-service/CreateOrder")
+
 	product, err := s.ProductSvc.FindOne(req.ProductId)
 
 	if err != nil {
