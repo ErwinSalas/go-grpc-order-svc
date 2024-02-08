@@ -1,9 +1,9 @@
-package db
+package database
 
 import (
 	"log"
 
-	"github.com/hellokvn/go-grpc-order-svc/pkg/models"
+	"github.com/ErwinSalas/go-grpc-order-svc/pkg/models"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )
