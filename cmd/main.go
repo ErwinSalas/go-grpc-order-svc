@@ -57,7 +57,7 @@ func main() {
 	go func() {
 		for {
 			var count int64
-			if err := datastore.DB.Table("users").Count(&count).Error; err != nil {
+			if err := datastore.DB.Table("orders").Count(&count).Error; err != nil {
 				log.Println("Database query error:", err)
 				healthcheck.SetServingStatus("", healthpb.HealthCheckResponse_NOT_SERVING)
 				return
